@@ -15,6 +15,10 @@ colour.parse = function (colour) {
 	"use strict";
 	var info;
 
+	if (typeof colour !== 'string') {
+		throw Error('Colour must be a string.');
+	}
+
 	if (info = /rgb\(([0-9]{1,3}), ?([0-9]{1,3}), ?([0-9]{1,3})\)/i.exec(colour)) {
 		return [
 			parseInt(info[1], 10),
@@ -34,5 +38,7 @@ colour.parse = function (colour) {
 			parseInt(colour.slice(3, 5), 16),
 			parseInt(colour.slice(5, 7), 16)
 		];
+	} else {
+		throw Error('Colour not recognised.');
 	}
 };
