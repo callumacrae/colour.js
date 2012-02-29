@@ -117,7 +117,6 @@ colour.multiply = function (c, i) {
 	c.forEach(function (d, j) {
 		c[j] = Math.round((d * i > 255) ? 255 : d * i);
 	});
-	console.log(c);
 
 	return colour.aryToString(c);
 };
@@ -131,4 +130,20 @@ colour.multiply = function (c, i) {
  */
 colour.divide = function (c, i) {
 	return colour.multiply(c, 1 / i);
+};
+
+/**
+ * Returns the average of two or more numbers.
+ *
+ * @param string c1 The first colour.
+ * @param string c2 The second colour.
+ * 	Éetc
+ * @returns string The new colour.
+ */
+colour.average = function () {
+	for (var i = 0; i < arguments.length; i++) {
+		arguments[i] = colour.divide(arguments[i], arguments.length);
+	}
+
+	return colour.add.apply(null, arguments);
 };
