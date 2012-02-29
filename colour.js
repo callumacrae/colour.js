@@ -99,3 +99,36 @@ colour.add = function () {
 
 	return colour.aryToString(endColour);
 };
+
+/**
+ * Multiplies a colour by a constant.
+ *
+ * @param string c The colour.
+ * @param int i The constant.
+ * @returns string The new colour.
+ */
+colour.multiply = function (c, i) {
+	c = colour.parse(c);
+
+	if (typeof i !== 'number') {
+		throw Error('Must be a number');
+	}
+
+	c.forEach(function (d, j) {
+		c[j] = Math.round((d * i > 255) ? 255 : d * i);
+	});
+	console.log(c);
+
+	return colour.aryToString(c);
+};
+
+/**
+ * Divides a colour by a constant.
+ *
+ * @param string c The colour.
+ * @param int i The constant.
+ * @returns string The new colour.
+ */
+colour.divide = function (c, i) {
+	return colour.multiply(c, 1 / i);
+};
