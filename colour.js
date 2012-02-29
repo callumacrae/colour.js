@@ -70,4 +70,32 @@ colour.aryToString = function (c) {
 	return c;
 };
 
+/**
+ * Adds two or more colours together.
+ *
+ * @param string c1 The first colour.
+ * @param string c2 The second colour.
+ * 	Éetc
+ * @returns string The new colour.
+ */
+colour.add = function () {
+	var endColour = [0, 0, 0], i, tmpColour;
+	for (i = 0; i < arguments.length; i++) {
+		if (typeof arguments[i] !== 'string') {
+			throw Error('Colours must be strings.');
+		}
 
+		tmpColour = colour.parse(arguments[i]);
+		endColour[0] += tmpColour[0];
+		endColour[1] += tmpColour[1];
+		endColour[2] += tmpColour[2];
+	}
+
+	endColour.forEach(function (c, i) {
+		if (c > 255) {
+			endColour[i] = 255;
+		}
+	});
+
+	return colour.aryToString(endColour);
+};
