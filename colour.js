@@ -8,6 +8,8 @@ var colour = {};
 /**
  * Parses a colour (eg #fff or rgb(255,255,255)) and returns an array.
  *
+ * Mostly for internal use.
+ *
  * @param string colour The colour to parse.
  * @returns array Array containing red, green and blue values.
  */
@@ -43,6 +45,14 @@ colour.parse = function (colour) {
 	}
 };
 
+/**
+ * Takes an RGB array (returned by colour.parse), and returns a string.
+ *
+ * Mostly for internal use.
+ *
+ * @param array c The colour array.
+ * @returns string The colour string.
+ */
 colour.aryToString = function (c) {
 	if (!Array.isArray(c)) {
 		throw Error('Colour must be an array.');
@@ -59,3 +69,5 @@ colour.aryToString = function (c) {
 
 	return c;
 };
+
+
