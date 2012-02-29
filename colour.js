@@ -42,3 +42,20 @@ colour.parse = function (colour) {
 		throw Error('Colour not recognised.');
 	}
 };
+
+colour.aryToString = function (c) {
+	if (!Array.isArray(c)) {
+		throw Error('Colour must be an array.');
+	}
+
+	c = 'rgb(' + c.join(',') + ')';
+
+	// Pass it to colour.parse to see whether it has produced a valid colour.
+	try {
+		colour.parse(c)
+	} catch (err) {
+		throw Error('Invalid array.');
+	}
+
+	return c;
+};
