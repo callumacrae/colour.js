@@ -54,6 +54,8 @@ colour.parse = function (colour) {
  * @returns string The colour string.
  */
 colour.aryToString = function (c) {
+	"use strict";
+
 	if (!Array.isArray(c)) {
 		throw Error('Colour must be an array.');
 	}
@@ -79,6 +81,8 @@ colour.aryToString = function (c) {
  * @returns string The new colour.
  */
 colour.add = function () {
+	"use strict";
+
 	var endColour = [0, 0, 0], i, tmpColour;
 	for (i = 0; i < arguments.length; i++) {
 		if (typeof arguments[i] !== 'string') {
@@ -108,6 +112,8 @@ colour.add = function () {
  * @returns string The new colour.
  */
 colour.multiply = function (c, i) {
+	"use strict";
+
 	c = colour.parse(c);
 
 	if (typeof i !== 'number') {
@@ -129,6 +135,8 @@ colour.multiply = function (c, i) {
  * @returns string The new colour.
  */
 colour.divide = function (c, i) {
+	"use strict";
+
 	return colour.multiply(c, 1 / i);
 };
 
@@ -141,6 +149,8 @@ colour.divide = function (c, i) {
  * @returns string The new colour.
  */
 colour.average = function () {
+	"use strict";
+
 	for (var i = 0; i < arguments.length; i++) {
 		arguments[i] = colour.divide(arguments[i], arguments.length);
 	}
