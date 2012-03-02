@@ -42,6 +42,6 @@ assertEquals(colour.divide('red', 2), 'rgb(128,0,0)');
 assertEquals(colour.divide('#333', 3), 'rgb(17,17,17)');
 
 // colour.average
-assertEquals(colour.average('red', 'blue'), 'rgb(64,0,128)');
+assertEquals(colour.average('red', 'blue'), 'rgb(128,0,128)');
 assertEquals(colour.average('#030000', '#000300', '#000003'), 'rgb(1,1,1)');
 assertEquals(colour.average('red', 'red'), 'rgb(255,0,0)');
