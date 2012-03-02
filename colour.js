@@ -42,7 +42,7 @@ colour.parse = function (colour) {
 			parseInt(colour.slice(5, 7), 16)
 		];
 	} else if (this._colours[colour.toLowerCase()]) {
-		return this._colours[colour.toLowerCase()];
+		return this._colours[colour.toLowerCase()].slice();
 	} else {
 		throw Error('Colour not recognised.');
 	}
