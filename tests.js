@@ -10,7 +10,7 @@ function assertEquals(one, two, name) {
 	}
 
 	if (one !== two) {
-		errors.innerHTML += (name || "unnamed") + ' fails: ' + JSON.stringify(one) + ' should equal ' + JSON.stringify(two);
+		errors.innerHTML += (name || 'unnamed') + ' fails: ' + JSON.stringify(one) + ' should equal ' + JSON.stringify(two);
 	}
 }
 
