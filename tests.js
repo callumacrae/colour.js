@@ -1,5 +1,15 @@
 var errors = document.getElementById('errors');
 
+/**
+ * Test that two values are the same. If they're not, details are outputted to the
+ * page. Only strings, numbers, arrays and booleans should be passed to this;
+ * objects will all equal every other object as it's just being converted to a string
+ * using .toString().
+ *
+ * @param mixed one The first value.
+ * @param mixed two The second value.
+ * @param string name The name of the test - optional.
+ */
 function assertEquals(one, two, name) {
 	if (one.toString() !== two.toString()) {
 		errors.innerHTML += (name || 'unnamed') + ' fails: ' + JSON.stringify(one) + ' should equal ' + JSON.stringify(two);
