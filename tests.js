@@ -1,15 +1,7 @@
 var errors = document.getElementById('errors');
 
 function assertEquals(one, two, name) {
-	if (typeof one !== 'string') {
-		one = one.toString();
-	}
-
-	if (typeof two !== 'string') {
-		two = two.toString();
-	}
-
-	if (one !== two) {
+	if (one.toString() !== two.toString()) {
 		errors.innerHTML += (name || 'unnamed') + ' fails: ' + JSON.stringify(one) + ' should equal ' + JSON.stringify(two);
 	}
 }
