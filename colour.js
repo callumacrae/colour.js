@@ -80,7 +80,7 @@ colour.aryToString = function (c) {
  *
  * @param string c1 The first colour.
  * @param string c2 The second colour.
- * 	Éetc
+ * 	ï¿½etc
  * @returns string The new colour.
  */
 colour.add = function () {
@@ -148,7 +148,7 @@ colour.divide = function (c, i) {
  *
  * @param string c1 The first colour.
  * @param string c2 The second colour.
- * 	Éetc
+ * 	ï¿½etc
  * @returns string The new colour.
  */
 colour.average = function () {
@@ -303,3 +303,13 @@ colour._colours = {
 	yellow: [255, 255, 0],
 	yellowgreen: [154, 205, 50]
 };
+
+// baconjs support
+if (typeof bacon === 'function') {
+	bacon.colour = colour;
+}
+
+// jQuery support
+if (typeof jQuery === 'function') {
+	jQuery.colour = colour;
+}
