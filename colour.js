@@ -80,7 +80,7 @@ colour.aryToString = function (c) {
  *
  * @param string c1 The first colour.
  * @param string c2 The second colour.
- * 	�etc
+ * 	...etc
  * @returns string The new colour.
  */
 colour.add = function () {
@@ -148,7 +148,7 @@ colour.divide = function (c, i) {
  *
  * @param string c1 The first colour.
  * @param string c2 The second colour.
- * 	�etc
+ * 	...etc
  * @returns string The new colour.
  */
 colour.average = function () {
